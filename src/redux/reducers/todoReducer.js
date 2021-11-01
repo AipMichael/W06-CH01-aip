@@ -1,14 +1,15 @@
 import actionTypes from "../actions/actionTypes";
 
 const todoReducer = (tasks = [], action) => {
-  let newTasks; // las funciones las aplico a newGentlemen: modifico gentlemen y lo asigno a newGentlmen
+  let newTasks;
 
   switch (action.type) {
     case actionTypes.createTask:
       newTasks = [...tasks, action.tasks];
       break;
     case actionTypes.readTasks:
-      newTasks = [...action.task];
+      newTasks = [...action.tasks];
+      console.log("reduce", action.tasks);
       break;
     case actionTypes.updateTask:
       newTasks = tasks.filter((task) => task.id !== action.id);
