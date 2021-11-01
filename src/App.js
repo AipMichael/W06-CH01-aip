@@ -1,4 +1,7 @@
 import "./App.css";
+import configureStore from "./redux/store";
+
+const store = configureStore;
 
 function App() {
   return (
