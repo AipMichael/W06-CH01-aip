@@ -1,6 +1,6 @@
 import actionTypes from "./actionTypes";
 
-export const createTasksAction = (task) => ({
+export const createTaskAction = (task) => ({
   type: actionTypes.createTask,
   task,
 });
