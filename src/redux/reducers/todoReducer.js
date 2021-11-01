@@ -1,25 +1,27 @@
-import actionTypes from "../actions/actionType";
+import actionTypes from "../actions/actionTypes";
 
-const todoReducer = (kitten, action) => {
-  let newTodo; // las funciones las aplico a newGentlemen: modifico gentlemen y lo asigno a newGentlmen
+const todoReducer = (tasks = [], action) => {
+  let newTasks; // las funciones las aplico a newGentlemen: modifico gentlemen y lo asigno a newGentlmen
 
   switch (action.type) {
-    // le paso los nombres de las funciones por cases
-    // dentro pongo lo que quiero que haga la función
-    // default: throw error o que envie el estado tal cual
-    case actionTypes.load:
-      newTodo = [...action.kitten];
+    case actionTypes.createTask:
+      newTasks = [...tasks, action.tasks];
       break;
-    case actionTypes.create:
-      newTodo = [...kitten, action.kitty];
+    case actionTypes.readTasks:
+      newTasks = [...action.task];
       break;
-    case actionTypes.delete:
-      newTodo = kitten.filter((kitty) => kitty.id !== action.id);
+    case actionTypes.updateTask:
+      newTasks = tasks.filter((task) => task.id !== action.id);
+      break;
+    case actionTypes.deleteTask:
+      newTasks = tasks.filter((task) => task.id !== action.id);
       break;
     default:
+      newTasks = tasks;
+      break;
   }
 
-  return newTodo;
+  return newTasks;
 };
 
 export default todoReducer;
