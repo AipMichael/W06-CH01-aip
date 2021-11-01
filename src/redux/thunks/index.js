@@ -1,17 +1,30 @@
-import { createTaskAction, readTasksAction } from "../actions/actionCreator";
+import { readTasksAction } from "../actions/actionCreator";
 
-const readTasksThunk = async (dispatch) => {
-  const response = await fetch(process.env.REACT_APP_API_URL);
+export const readTasksThunk = () => async (dispatch) => {
+  const response = await fetch("https://todo-aip-api.herokuapp.com/list/");
+
   const tasks = await response.json();
-
+  console.log("thunk", tasks);
   dispatch(readTasksAction(tasks));
 };
 
-const createTaskThunk = async (dispatch) => {
-  /*   const response = await fetch("https://todo-aip-api.herokuapp.com/list");
+export const createTaskThunk = () => async (dispatch) => {
+  /*   const response = await fetch("https://todo-aip-api.herokuapp.com/list/");
   const tasks = await response.json();
 
   dispatch(createTaskAction(tasks)); */
 };
 
-export default readTasksThunk;
+export const deleteTaskThunk = () => async (dispatch) => {
+  /*   const response = await fetch("https://todo-aip-api.herokuapp.com/list/");
+  const tasks = await response.json();
+
+  dispatch(createTaskAction(tasks)); */
+};
+
+export const updateTaskThunk = () => async (dispatch) => {
+  /*   const response = await fetch("https://todo-aip-api.herokuapp.com/list/");
+  const tasks = await response.json();
+
+  dispatch(createTaskAction(tasks)); */
+};
