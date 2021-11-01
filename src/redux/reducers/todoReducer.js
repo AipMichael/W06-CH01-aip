@@ -9,7 +9,7 @@ const todoReducer = (tasks = [], action) => {
       break;
     case actionTypes.readTasks:
       newTasks = [...action.tasks];
-      console.log("reduce", action.tasks);
+
       break;
     case actionTypes.updateTask:
       newTasks = tasks.filter((task) => task.id !== action.id);

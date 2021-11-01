@@ -13,10 +13,17 @@ function App() {
   return (
     <div className="App">
       <h1>Aip Am An Aip Api App</h1>
-      <pre>{JSON.stringify(tasks, null, 2)}</pre>
+
       <ul className="tasks">
+        {" "}
+        These are my pending tasks:
         {tasks.map(({ task }) => (
-          <li key={task}>{task}</li>
+          <li key={task}>
+            <input type="checkbox" />
+            {task}
+            <button className="tasks__edit">Edit task</button>
+            <button className="tasks__delete">Delete task</button>
+          </li>
         ))}
       </ul>
       <Form />
