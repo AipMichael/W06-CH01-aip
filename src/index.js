@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import configureStore from "./redux/store";
 import { Provider } from "react-redux";
 
-const store = configureStore;
+const store = configureStore();
 
 ReactDOM.render(
   <React.StrictMode>
