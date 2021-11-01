@@ -1,5 +1,4 @@
 import "./App.css";
-import configureStore from "./redux/store";
 
 function App() {
   return (
