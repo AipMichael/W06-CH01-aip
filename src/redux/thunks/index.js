@@ -4,7 +4,6 @@ export const readTasksThunk = () => async (dispatch) => {
   const response = await fetch("https://todo-aip-api.herokuapp.com/list/");
 
   const tasks = await response.json();
-  console.log("thunk", tasks);
   dispatch(readTasksAction(tasks));
 };
 

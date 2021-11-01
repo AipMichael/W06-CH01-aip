@@ -13,7 +13,6 @@ const useTodo = () => {
 
   const readTasks = useCallback(() => {
     dispatch(readTasksThunk());
-    console.log("juc");
   }, [dispatch]);
 
   const createTask = useCallback(() => {
