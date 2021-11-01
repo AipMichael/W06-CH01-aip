@@ -15,9 +15,13 @@ const useTodo = () => {
     dispatch(readTasksThunk());
   }, [dispatch]);
 
-  const createTask = useCallback(() => {
-    dispatch(createTaskThunk());
-  }, [dispatch]);
+  const createTask = useCallback(
+    (task) => {
+      console.log("estoy en useTodo");
+      dispatch(createTaskThunk(task));
+    },
+    [dispatch]
+  );
 
   const updateTask = useCallback(() => {
     dispatch(updateTaskThunk());

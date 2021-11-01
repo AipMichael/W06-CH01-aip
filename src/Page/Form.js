@@ -1,9 +1,9 @@
-import { useState } from "react";
-import useTodo from "../hooks/useTodo";
+/* import { useState } from "react";
+import useTodo from "../hooks/useTodo"; */
 
-const Form = (actionOnSubmit) => {
-  const { createTask } = useTodo();
-  const initialValue = {
+const Form = ({ actionOnChange, addNewTask }) => {
+  /*   const { createTask } = useTodo(); */
+  /*   const initialValue = {
     task: "",
     pending: true,
   };
@@ -16,12 +16,13 @@ const Form = (actionOnSubmit) => {
     });
   };
 
-  const addNewTask = () => {
+    const addNewTask = (event) => {
+    event.preventDefault();
     let newTask = {
       ...newFormTask,
     };
     createTask(newTask);
-  };
+  }; */
 
   return (
     <>
@@ -38,7 +39,6 @@ const Form = (actionOnSubmit) => {
         />
         <button className="form-button">Create task</button>
       </form>
-      <pre>{JSON.stringify(newFormTask, null, 2)}</pre>
     </>
   );
 };
