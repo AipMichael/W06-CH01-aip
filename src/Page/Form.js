@@ -2,33 +2,11 @@
 import useTodo from "../hooks/useTodo"; */
 
 const Form = ({ actionOnChange, addNewTask }) => {
-  /*   const { createTask } = useTodo(); */
-  /*   const initialValue = {
-    task: "",
-    pending: true,
-  };
-  const [newFormTask, setNewFormTask] = useState(initialValue);
-
-  const actionOnChange = (event) => {
-    setNewFormTask({
-      ...newFormTask,
-      [event.target.id]: event.target.value,
-    });
-  };
-
-    const addNewTask = (event) => {
-    event.preventDefault();
-    let newTask = {
-      ...newFormTask,
-    };
-    createTask(newTask);
-  }; */
-
   return (
     <>
       <form className="form" autoComplete="off" onSubmit={addNewTask}>
         <label htmlFor="task" className="form_request">
-          Write new To Do
+          Write new task
         </label>
         <input
           type="text"

@@ -3,6 +3,7 @@ import "./App.css";
 import useTodo from "./hooks/useTodo";
 import Form from "./Page/Form";
 import { useState } from "react";
+import Task from "./Page/task/task";
 
 function App() {
   const { tasks, readTasks, createTask } = useTodo();
@@ -29,8 +30,8 @@ function App() {
     let newTask = {
       ...newFormTask,
     };
-    console.log(newTask, "inApp");
     createTask(newTask);
+    // falta vaciar el valor
   };
 
   return (
@@ -41,12 +42,7 @@ function App() {
         {" "}
         These are my pending tasks:
         {tasks.map(({ task }) => (
-          <li key={task}>
-            <input type="checkbox" />
-            {task}
-            <button className="tasks__edit">Edit task</button>
-            <button className="tasks__delete">Delete task</button>
-          </li>
+          <Task task={task} />
         ))}
       </ul>
       <Form actionOnChange={actionOnChange} addNewTask={addNewTask} />
