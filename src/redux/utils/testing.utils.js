@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
-import configureStore from "../redux/store";
+import configureStore from "../store/index";
 
 const renderWithProviders = (component, initialState) => {
   const store = configureStore(initialState);
