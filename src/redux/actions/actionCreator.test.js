@@ -5,6 +5,7 @@ import actionCreator, {
   readTasksAction,
   updateTaskAction,
   deleteTaskAction,
+  toggleTaskAction,
 } from "./actionCreator";
 
 describe("Given a read actionCreator", () => {
@@ -65,6 +66,22 @@ describe("Given a delete actionCreator", () => {
       };
 
       const resultedAction = deleteTaskAction(id);
+
+      expect(resultedAction).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given a toggle actionCreator", () => {
+  describe("When it receives an id", () => {
+    test("Then it should return a toggle type action with the task received", () => {
+      const id = 1;
+      const expectedAction = {
+        type: actionTypes.toggleTask,
+        id,
+      };
+
+      const resultedAction = toggleTaskAction(id);
 
       expect(resultedAction).toEqual(expectedAction);
     });

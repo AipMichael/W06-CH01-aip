@@ -19,3 +19,8 @@ export const deleteTaskAction = (id) => ({
   type: actionTypes.deleteTask,
   id,
 });
+
+export const toggleTaskAction = (id) => ({
+  type: actionTypes.toggleTask,
+  id,
+});
