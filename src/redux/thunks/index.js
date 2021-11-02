@@ -1,4 +1,8 @@
-import { createTaskAction, readTasksAction } from "../actions/actionCreator";
+import {
+  createTaskAction,
+  readTasksAction,
+  updateTaskAction,
+} from "../actions/actionCreator";
 
 export const readTasksThunk = () => async (dispatch) => {
   const response = await fetch("https://todo-aip-api.herokuapp.com/list/");
@@ -8,7 +12,6 @@ export const readTasksThunk = () => async (dispatch) => {
 };
 
 export const createTaskThunk = (task) => {
-  debugger;
   return async (dispatch) => {
     console.log(task, "HOLA MARIO, estoy enThunks1");
     const response = await fetch("https://todo-aip-api.herokuapp.com/list", {
@@ -31,9 +34,20 @@ export const deleteTaskThunk = () => async (dispatch) => {
   dispatch(createTaskAction(tasks)); */
 };
 
-export const updateTaskThunk = () => async (dispatch) => {
-  /*   const response = await fetch("https://todo-aip-api.herokuapp.com/list/");
-  const tasks = await response.json();
+export const updateTaskThunk = (task) => async (dispatch) => {
+  return async (dispatch) => {
+    const response = await fetch(
+      `https://todo-aip-api.herokuapp.com/list/${task.id}`,
+      {
+        method: "PUT",
+        body: JSON.stringify(task),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const newTasks = await response.json();
 
-  dispatch(createTaskAction(tasks)); */
+    dispatch(updateTaskAction(newTasks));
+  };
 };

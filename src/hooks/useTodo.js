@@ -23,13 +23,19 @@ const useTodo = () => {
     [dispatch]
   );
 
-  const updateTask = useCallback(() => {
-    dispatch(updateTaskThunk());
-  }, [dispatch]);
+  const updateTask = useCallback(
+    (task) => {
+      dispatch(updateTaskThunk(task));
+    },
+    [dispatch]
+  );
 
-  const deleteTask = useCallback(() => {
-    dispatch(deleteTaskThunk());
-  }, [dispatch]);
+  const deleteTask = useCallback(
+    (id) => {
+      dispatch(deleteTaskThunk(id));
+    },
+    [dispatch]
+  );
 
   return {
     tasks,
