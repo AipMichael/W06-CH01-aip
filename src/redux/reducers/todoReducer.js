@@ -5,11 +5,10 @@ const todoReducer = (tasks = [], action) => {
 
   switch (action.type) {
     case actionTypes.createTask:
-      newTasks = [...tasks, action.tasks];
+      newTasks = [...tasks, action.task];
       break;
     case actionTypes.readTasks:
       newTasks = [...action.tasks];
-
       break;
     case actionTypes.updateTask:
       newTasks = tasks.filter((task) => task.id !== action.id);

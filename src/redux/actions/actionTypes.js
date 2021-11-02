@@ -1,5 +1,5 @@
 const actionTypes = {
-  createTasks: "CREATE_TASK",
+  createTask: "CREATE_TASK",
   readTasks: "READ-TASKS",
   updateTask: "UPDATE-TASK",
   deleteTask: "DELETE-TASK",

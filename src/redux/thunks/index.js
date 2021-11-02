@@ -10,7 +10,7 @@ export const readTasksThunk = () => async (dispatch) => {
 export const createTaskThunk = (task) => {
   debugger;
   return async (dispatch) => {
-    console.log(task, "enThunks1");
+    console.log(task, "HOLA MARIO, estoy enThunks1");
     const response = await fetch("https://todo-aip-api.herokuapp.com/list", {
       method: "POST",
       body: JSON.stringify(task),
@@ -19,7 +19,7 @@ export const createTaskThunk = (task) => {
       },
     });
     const newTasks = await response.json();
-    console.log(newTasks, "enThunks2");
+    console.log(newTasks, "HOLA MARIO, estoy enThunks2");
     dispatch(createTaskAction(newTasks));
   };
 };
