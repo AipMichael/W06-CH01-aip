@@ -17,7 +17,6 @@ const useTodo = () => {
 
   const createTask = useCallback(
     (task) => {
-      console.log("estoy en useTodo");
       dispatch(createTaskThunk(task));
     },
     [dispatch]
@@ -31,6 +30,7 @@ const useTodo = () => {
   );
 
   const deleteTask = useCallback(
+    //pending
     (id) => {
       dispatch(deleteTaskThunk(id));
     },

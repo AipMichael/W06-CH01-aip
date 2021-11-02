@@ -42,7 +42,7 @@ function App() {
         {" "}
         These are my pending tasks:
         {tasks.map(({ task }) => (
-          <Task task={task} />
+          <Task task={task} key={task} />
         ))}
       </ul>
       <Form actionOnChange={actionOnChange} addNewTask={addNewTask} />
