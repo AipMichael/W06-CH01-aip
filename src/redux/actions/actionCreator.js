@@ -10,13 +10,17 @@ export const readTasksAction = (tasks) => ({
   tasks,
 });
 
-export const updateTaskAction = (task, id) => ({
+export const updateTaskAction = (task) => ({
   type: actionTypes.updateTask,
   task,
-  id,
 });
 
 export const deleteTaskAction = (id) => ({
-  type: actionTypes.readTask,
+  type: actionTypes.deleteTask,
+  id,
+});
+
+export const toggleTaskAction = (id) => ({
+  type: actionTypes.toggleTask,
   id,
 });

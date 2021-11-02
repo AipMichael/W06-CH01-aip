@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll --collect-coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,6 +39,8 @@
     ]
   },
   "devDependencies": {
+    "faker": "^5.5.3",
+    "fishery": "^2.0.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.0"
   }

@@ -11,7 +11,9 @@ const todoReducer = (tasks = [], action) => {
       newTasks = [...action.tasks];
       break;
     case actionTypes.updateTask:
-      newTasks = tasks.filter((task) => task.id !== action.id);
+      newTasks = tasks.map((task) =>
+        task.id === action.task.id ? { ...task, ...action.task } : task
+      );
       break;
     case actionTypes.deleteTask:
       newTasks = tasks.filter((task) => task.id !== action.id);
